@@ -22,6 +22,7 @@ export function Footer() {
             <li><Link href="/nosotros" className="hover:text-brand-700">Nosotros</Link></li>
             <li><Link href="/beneficios" className="hover:text-brand-700">Beneficios</Link></li>
             <li><Link href="/servicios" className="hover:text-brand-700">Servicios</Link></li>
+            <li><Link href="/planillas" className="hover:text-brand-700">Planillas</Link></li>
             <li><Link href="/afiliacion" className="hover:text-brand-700">Afiliación</Link></li>
             <li><Link href="/contacto" className="hover:text-brand-700">Contacto</Link></li>
           </ul>
@@ -38,7 +39,7 @@ export function Footer() {
             </li>
             <li>
               <a href={`tel:${site.phone.replace(/\s+/g, "")}`} className="hover:text-brand-700">
-                {site.phone}
+                {site.phoneLabel}: {site.phone}
               </a>
             </li>
           </ul>

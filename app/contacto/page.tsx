@@ -33,12 +33,12 @@ export default function ContactoPage() {
               </a>
             </div>
             <div className="rounded-2xl border border-slate-200 p-6">
-              <h3 className="font-semibold text-slate-900">Teléfono</h3>
+              <h3 className="font-semibold text-slate-900">{site.phoneLabel}</h3>
               <a
                 href={`tel:${site.phone.replace(/\s+/g, "")}`}
                 className="mt-1 block text-brand-700 hover:underline"
               >
-                {site.phone}
+                Celular: {site.phone}
               </a>
             </div>
             <div className="rounded-2xl border border-slate-200 p-6">
