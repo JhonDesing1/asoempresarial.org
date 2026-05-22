@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/servicios", label: "Servicios" },
   { href: "/planillas", label: "Planillas" },
   { href: "/afiliacion", label: "Afiliación" },
+  { href: "/esal", label: "ESAL" },
   { href: "/contacto", label: "Contacto" },
 ];
 

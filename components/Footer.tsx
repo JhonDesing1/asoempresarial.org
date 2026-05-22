@@ -24,6 +24,7 @@ export function Footer() {
             <li><Link href="/servicios" className="hover:text-brand-700">Servicios</Link></li>
             <li><Link href="/planillas" className="hover:text-brand-700">Planillas</Link></li>
             <li><Link href="/afiliacion" className="hover:text-brand-700">Afiliación</Link></li>
+            <li><Link href="/esal" className="hover:text-brand-700">ESAL</Link></li>
             <li><Link href="/contacto" className="hover:text-brand-700">Contacto</Link></li>
           </ul>
         </div>

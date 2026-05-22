@@ -44,3 +44,6 @@ next-env.d.ts
 
 # Claude local memory
 .claude
+
+# Carpeta de origen de documentos legales (las copias publicadas viven en /public/legales)
+/legales
