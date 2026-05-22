@@ -22,7 +22,11 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
       <nav className="container-page flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center" aria-label={`${site.name} — inicio`}>
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-bold text-brand-700"
+          aria-label={`${site.name} — inicio`}
+        >
           <Image
             src="/logo.png"
             alt={site.name}
@@ -31,6 +35,7 @@ export function Navbar() {
             priority
             className="h-10 w-auto sm:h-11"
           />
+          <span className="text-lg tracking-tight">{site.name}</span>
         </Link>
 
         <ul className="hidden items-center gap-6 md:flex">
