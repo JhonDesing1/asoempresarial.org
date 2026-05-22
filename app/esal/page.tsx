@@ -234,24 +234,23 @@ export default function EsalPage() {
           <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center">
             <div>
               <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-                Verifica la autenticidad de nuestro certificado
+                Verifica nuestra información registral
               </h2>
               <p className="mt-4 leading-relaxed text-slate-600">
-                El Certificado de Existencia y Representación Legal incluye un
-                código de verificación expedido por Confecámaras. Puedes
-                confirmar su validez en línea directamente con la entidad
-                emisora, de forma gratuita e ilimitada durante los 60 días
-                siguientes a su expedición.
+                Puedes confirmar la existencia y los datos de la asociación
+                consultando nuestro NIT 809.012.069-4 en el Registro Único
+                Empresarial y Social (RUES), administrado por las Cámaras de
+                Comercio del país. La consulta es pública y gratuita.
               </p>
             </div>
             <div className="flex flex-col gap-3">
               <a
-                href="https://sii.confecamaras.co/vista/plantilla/cv.php"
+                href="https://www.rues.org.co/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
               >
-                Verificar en Confecámaras
+                Consultar en el RUES
               </a>
               <Link href="/contacto" className="btn-secondary">
                 Contactar a la asociación
