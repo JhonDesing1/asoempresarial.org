@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { site } from "@/lib/site";
 
@@ -21,14 +22,15 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
       <nav className="container-page flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-bold text-brand-700">
-          <span
-            aria-hidden
-            className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-white"
-          >
-            A
-          </span>
-          <span className="text-lg tracking-tight">{site.name}</span>
+        <Link href="/" className="flex items-center" aria-label={`${site.name} — inicio`}>
+          <Image
+            src="/logo.png"
+            alt={site.name}
+            width={78}
+            height={80}
+            priority
+            className="h-10 w-auto sm:h-11"
+          />
         </Link>
 
         <ul className="hidden items-center gap-6 md:flex">

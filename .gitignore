@@ -47,3 +47,6 @@ next-env.d.ts
 
 # Carpeta de origen de documentos legales (las copias publicadas viven en /public/legales)
 /legales
+
+# Carpeta de origen de imágenes (las copias publicadas viven en /public)
+/imagenes

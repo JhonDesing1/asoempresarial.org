@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 
 const benefits = [
@@ -34,13 +35,37 @@ const benefits = [
   },
 ];
 
+const stats = [
+  { n: "+500", l: "Afiliados activos" },
+  { n: "12", l: "Años de trayectoria" },
+  { n: "30+", l: "Aliados comerciales" },
+  { n: "100%", l: "Compromiso social" },
+];
+
+const values = [
+  { t: "Unión", d: "Somos más fuertes cuando trabajamos juntos." },
+  { t: "Transparencia", d: "Cuentas claras y gestión abierta." },
+  { t: "Solidaridad", d: "Nos apoyamos los unos a los otros." },
+  { t: "Crecimiento", d: "Capacitación y oportunidades reales." },
+];
+
 export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-700 via-brand-600 to-brand-500 text-white">
-        <div className="container-page grid gap-10 py-20 sm:py-28 lg:grid-cols-2 lg:items-center">
+        {/* decorative blobs */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/10 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-brand-400/30 blur-3xl"
+        />
+
+        <div className="container-page relative grid gap-12 py-20 sm:py-24 lg:grid-cols-2 lg:items-center">
           <div>
-            <span className="inline-block rounded-full bg-white/15 px-3 py-1 text-xs font-medium uppercase tracking-wider">
+            <span className="inline-block rounded-full bg-white/15 px-3 py-1 text-xs font-medium uppercase tracking-wider ring-1 ring-white/20">
               Pereira · Risaralda · Colombia
             </span>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
@@ -65,32 +90,54 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="hidden lg:block">
-            <div className="relative mx-auto aspect-square w-full max-w-md rounded-3xl bg-white/10 p-8 backdrop-blur">
-              <div className="grid h-full grid-cols-2 gap-4">
-                {[
-                  { n: "+500", l: "Afiliados activos" },
-                  { n: "12", l: "Años de trayectoria" },
-                  { n: "30+", l: "Aliados comerciales" },
-                  { n: "100%", l: "Compromiso social" },
-                ].map((s) => (
-                  <div
-                    key={s.l}
-                    className="flex flex-col items-center justify-center rounded-2xl bg-white/10 p-4 text-center"
-                  >
-                    <div className="text-3xl font-bold">{s.n}</div>
-                    <div className="mt-1 text-xs text-brand-50/80">{s.l}</div>
-                  </div>
-                ))}
+
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/20">
+              <Image
+                src="/images/trabajadores.jpg"
+                alt="Trabajadores independientes afiliados a ASOEMPRESARIAL reunidos"
+                width={1168}
+                height={784}
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="h-full w-full object-cover"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-tr from-brand-900/40 via-transparent to-transparent"
+              />
+            </div>
+            {/* floating stat badge */}
+            <div className="absolute -bottom-5 left-5 rounded-2xl bg-white px-5 py-3 text-brand-700 shadow-xl ring-1 ring-black/5 sm:left-8">
+              <div className="text-2xl font-bold leading-none">+500</div>
+              <div className="mt-1 text-xs font-medium text-slate-500">
+                independientes nos respaldan
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* stats strip */}
+      <section className="border-b border-slate-200 bg-white">
+        <div className="container-page grid grid-cols-2 gap-6 py-10 sm:py-12 lg:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.l} className="text-center">
+              <div className="text-3xl font-bold text-brand-700 sm:text-4xl">
+                {s.n}
+              </div>
+              <div className="mt-1 text-sm text-slate-500">{s.l}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="section">
         <div className="container-page text-center">
-          <h2 className="section-title">¿Por qué afiliarte?</h2>
+          <span className="text-sm font-semibold uppercase tracking-wide text-brand-700">
+            Beneficios
+          </span>
+          <h2 className="mt-2 section-title">¿Por qué afiliarte?</h2>
           <p className="section-subtitle mx-auto max-w-2xl">
             Más que una asociación: una comunidad que te respalda, capacita y conecta
             con nuevas oportunidades.
@@ -100,10 +147,12 @@ export default function HomePage() {
           {benefits.map((b) => (
             <div
               key={b.title}
-              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md"
+              className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-md"
             >
-              <div className="text-3xl" aria-hidden>{b.icon}</div>
-              <h3 className="mt-3 text-lg font-semibold text-slate-900">{b.title}</h3>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-2xl transition group-hover:bg-brand-100" aria-hidden>
+                {b.icon}
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-slate-900">{b.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">{b.desc}</p>
             </div>
           ))}
@@ -111,36 +160,51 @@ export default function HomePage() {
       </section>
 
       <section className="bg-slate-50 section">
-        <div className="container-page grid gap-10 lg:grid-cols-2 lg:items-center">
+        <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="relative order-last lg:order-first">
+            <div className="overflow-hidden rounded-3xl shadow-xl ring-1 ring-slate-900/5">
+              <Image
+                src="/images/personas2.jpg"
+                alt="Capacitación y formación para trabajadores independientes"
+                width={1168}
+                height={784}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div
+              aria-hidden
+              className="absolute -bottom-6 -right-4 -z-10 h-40 w-40 rounded-3xl bg-brand-100 sm:-right-6"
+            />
+          </div>
+
           <div>
-            <h2 className="section-title">Nuestra misión</h2>
+            <span className="text-sm font-semibold uppercase tracking-wide text-brand-700">
+              Nuestra misión
+            </span>
+            <h2 className="mt-2 section-title">Unidos crecemos más</h2>
             <p className="section-subtitle">
               En {site.name} trabajamos para dignificar, proteger y fortalecer el
               trabajo independiente en Pereira y Colombia. Creemos en el poder de
               la unión: cuando los independientes se organizan, la economía local
               prospera.
             </p>
-            <div className="mt-6 flex gap-3">
+            <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+              {values.map((v) => (
+                <li
+                  key={v.t}
+                  className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-brand-200 hover:shadow-sm"
+                >
+                  <h3 className="font-semibold text-brand-700">{v.t}</h3>
+                  <p className="mt-1 text-sm text-slate-600">{v.d}</p>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/nosotros" className="btn-primary">Conoce más</Link>
               <Link href="/contacto" className="btn-secondary">Contáctanos</Link>
             </div>
           </div>
-          <ul className="grid gap-4 sm:grid-cols-2">
-            {[
-              { t: "Unión", d: "Somos más fuertes cuando trabajamos juntos." },
-              { t: "Transparencia", d: "Cuentas claras y gestión abierta." },
-              { t: "Solidaridad", d: "Nos apoyamos los unos a los otros." },
-              { t: "Crecimiento", d: "Capacitación y oportunidades reales." },
-            ].map((v) => (
-              <li
-                key={v.t}
-                className="rounded-xl border border-slate-200 bg-white p-5"
-              >
-                <h3 className="font-semibold text-brand-700">{v.t}</h3>
-                <p className="mt-1 text-sm text-slate-600">{v.d}</p>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 

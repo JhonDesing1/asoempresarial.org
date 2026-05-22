@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -8,9 +9,13 @@ export function Footer() {
       <div className="container-page grid gap-10 py-12 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 font-bold text-brand-700">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-white">
-              A
-            </span>
+            <Image
+              src="/logo.png"
+              alt={site.name}
+              width={78}
+              height={80}
+              className="h-9 w-auto"
+            />
             <span className="text-lg">{site.name}</span>
           </div>
           <p className="mt-3 max-w-md text-sm text-slate-600">{site.description}</p>
