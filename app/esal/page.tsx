@@ -51,6 +51,12 @@ const documentGroups: DocGroup[] = [
         href: "/legales/informe-gestion-2025.pdf",
         meta: "PDF · 156 KB · 2025",
       },
+      {
+        title: "Declaración de Renta — Año Gravable 2025",
+        desc: "Declaración del impuesto sobre la renta y complementarios correspondiente al año gravable 2025, presentada ante la DIAN el 11 de mayo de 2026.",
+        href: "/legales/declaracion-renta-2025.pdf",
+        meta: "PDF · 297 KB · 2025",
+      },
     ],
   },
   {
