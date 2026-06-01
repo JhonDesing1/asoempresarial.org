@@ -130,11 +130,11 @@ const actividadesMeritorias: { num: string; titulo: string; descripcion: string 
   },
 ];
 
-const cargosDirectivos: { nombre: string; identificacion: string }[] = [
-  { nombre: "GILDARDO ANTONIO TORO VARGAS", identificacion: "CC 4.344.003" },
-  { nombre: "MARIA NELLY OROZCO GARCIA", identificacion: "CC 24.385.965" },
-  { nombre: "JULIAN ANDRES ACERO RAMIREZ", identificacion: "CC 14.398.972" },
-  { nombre: "DIANA MARCELA TORO OROZCO", identificacion: "CC 1.054.918.329" },
+const cargosDirectivos: { nombre: string; cargo: string; identificacion: string }[] = [
+  { nombre: "GILDARDO ANTONIO TORO VARGAS", cargo: "Presidente", identificacion: "CC 4.344.003" },
+  { nombre: "MARIA NELLY OROZCO GARCIA", cargo: "Vicepresidente", identificacion: "CC 24.385.965" },
+  { nombre: "JULIAN ANDRES ACERO RAMIREZ", cargo: "Tesorero", identificacion: "CC 14.398.972" },
+  { nombre: "DIANA MARCELA TORO OROZCO", cargo: "Secretaria", identificacion: "CC 1.054.918.329" },
 ];
 
 const fundadores: { nombre: string; identificacion: string }[] = [
@@ -319,6 +319,7 @@ export default function EsalPage() {
                   <thead className="bg-slate-100 text-xs font-semibold uppercase tracking-wide text-slate-600">
                     <tr>
                       <th className="px-5 py-3">Nombres y apellidos</th>
+                      <th className="px-5 py-3">Cargo</th>
                       <th className="px-5 py-3">Número de identificación</th>
                     </tr>
                   </thead>
@@ -327,6 +328,9 @@ export default function EsalPage() {
                       <tr key={p.identificacion}>
                         <td className="px-5 py-4 font-medium text-slate-900">
                           {p.nombre}
+                        </td>
+                        <td className="px-5 py-4 text-slate-700">
+                          {p.cargo}
                         </td>
                         <td className="px-5 py-4 font-mono text-slate-700">
                           {p.identificacion}
